@@ -1,0 +1,5 @@
+<configuration>
+  <!-- Override with -Dcr2se.log.level=TRACE. Logs go to stderr so stdout stays machine-readable JSON. -->
+  <appender name="STDERR" class="ch.qos.logback.core.ConsoleAppender"><target>System.err</target><encoder><pattern>%date %-5level [%logger{24}] %msg%n</pattern></encoder></appender>
+  <root level="${cr2se.log.level:-WARN}"><appender-ref ref="STDERR"/></root>
+</configuration>
